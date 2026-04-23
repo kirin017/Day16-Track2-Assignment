@@ -1,0 +1,3 @@
+## Báo cáo Benchmark Lab 16 (CPU Alternative)
+
+Do hạn mức (quota) GPU trên Google Cloud mặc định bằng 0 và cần thời gian xét duyệt, em đã chuyển sang phương án dự phòng sử dụng CPU Instance `n2-standard-8` (8 vCPUs, 32GB RAM) để triển khai mô hình LightGBM. Kết quả benchmark cho thấy hiệu năng rất ấn tượng: thời gian huấn luyện chỉ mất 6.3 giây với độ chính xác AUC-ROC đạt 0.8850. Tốc độ suy luận (inference speed) cực nhanh với độ trễ chỉ 2.04 ms/dòng và băng thông đạt hơn 99,000 dòng/giây. Việc sử dụng CPU trong trường hợp này không chỉ giúp triển khai ngay lập tức mà còn tối ưu chi phí so với giải pháp GPU, trong khi vẫn đảm bảo hiệu suất xử lý dữ liệu bảng (tabular data) ở mức cao.
